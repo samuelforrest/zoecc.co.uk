@@ -19,7 +19,11 @@ A modern portfolio website built with Next.js, featuring a blog management syste
 ##  Tech Stack
 
 **Frontend Framework**
-- [Vite](https://nextjs.org/)
-- [React 18.3.1](https://react.dev/)
-- [TypeScript 5.4.5](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+**Styling & UI**
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
 
