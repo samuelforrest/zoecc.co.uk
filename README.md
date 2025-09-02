@@ -11,7 +11,7 @@ A modern, yet simple and fast landing page built with React + vite.
 
 - **Modern Design:** Clean, responsive UI
 - **Responsive:** Mobile-first design for all devices.
-- **Performance:** Optimized for speed and SEO — all images use `.webp`, reducing load time by 70%, and helping Google SEO
+- **Performance:** Optimized for speed and SEO — all images use `.webp`, reducing load time by 70%, and helping Google SEO. 450ms average load time.
 - **SEO:** Ranked number 2 for Cat Carers in Kingston, Teddington, on Google.com
 - **Analytics:** Integrated with Google Analytics.
 
