@@ -1,10 +1,10 @@
 
 
-# Portfolio V3
+# ZoeCC.co.uk
 
-> **The third iteration of my personal portfolio website — [www.samuelforrest.me](https://www.samuelforrest.me)**
+> **A Client project for a Cat Carer, seeking a high-SEO performance landing page for more clients**
 
-A modern portfolio website built with Next.js, featuring a blog management system, animated UI components, and a clean, professional design.
+A modern, yet simple and fast landing page built with React + vite.
 
 
 ##  Features
