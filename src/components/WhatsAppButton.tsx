@@ -1,4 +1,3 @@
-// WhatsApp SVG Logo component
 const WhatsAppLogo = ({ size = 20 }: { size?: number }) => (
   <svg
     width={size}
