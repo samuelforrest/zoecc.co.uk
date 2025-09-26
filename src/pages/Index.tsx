@@ -2,6 +2,7 @@ import { WhatsAppButton, WhatsAppLink } from '@/components/WhatsAppButton';
 import { Heart, Camera, Coffee, Droplets, Sparkles, CheckCircle } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
 import { useEffect, useState } from 'react';
+import { Analytics } from "@vercel/analytics/next"
 
 const Index = () => {
   const [api, setApi] = useState<CarouselApi>()
@@ -386,6 +387,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      <Analytics/>
     </div>
   );
 };
