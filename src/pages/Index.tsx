@@ -53,6 +53,7 @@ const Index = () => {
                 src="/photos/cat1.webp" 
                 alt="Zoe holding a beautiful fluffy cat" 
                 className="w-full h-auto object-cover"
+                loading="eager" 
               />
             </div>
           </div>
