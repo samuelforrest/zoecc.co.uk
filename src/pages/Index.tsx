@@ -1,26 +1,40 @@
-import { WhatsAppButton, WhatsAppLink } from '@/components/WhatsAppButton';
-import { Heart, Camera, Coffee, Droplets, Sparkles, CheckCircle } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from '@/components/ui/carousel';
-import { useEffect, useState } from 'react';
-import { Analytics } from "@vercel/analytics/next"
+import { WhatsAppButton, WhatsAppLink } from "@/components/WhatsAppButton";
+import {
+  Heart,
+  Camera,
+  Coffee,
+  Droplets,
+  Sparkles,
+  CheckCircle,
+} from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  CarouselApi,
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
 
 const Index = () => {
-  const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
-  const [count, setCount] = useState(0)
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!api) {
-      return
+      return;
     }
 
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -29,32 +43,35 @@ const Index = () => {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight animate-fade-in">
-                Zoe Cat Care: Gentle Care with{' '}
+                Zoe Cat Care: Gentle Care with{" "}
                 <span className="text-primary">Zoe</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                £8/visit, tailored care for every cat personality, while you're away or on holiday
+                £8/visit, tailored care for every cat personality, while you're
+                away or on holiday
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start bg-mut">
               <div className="flex flex-col items-center lg:items-start">
-                <WhatsAppButton 
-                  phoneNumber="+44 7434 869115" 
+                <WhatsAppButton
+                  phoneNumber="+44 7434 869115"
                   message="Hi Zoe! I'd like to enquire about cat care services."
                   className="text-lg px-8 py-4"
                 />
-                <p className="text-sm text-muted-foreground mt-2">(+44 7434 869115)</p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  (+44 7434 869115)
+                </p>
               </div>
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src="/photos/cat1.webp" 
-                alt="Zoe holding a beautiful fluffy cat" 
+              <img
+                src="/photos/cat1.webp"
+                alt="Zoe holding a beautiful fluffy cat"
                 className="w-full h-auto object-cover"
-                loading="eager" 
+                loading="eager"
               />
             </div>
           </div>
@@ -63,18 +80,24 @@ const Index = () => {
 
       <section className="py-20 px-4 bg-card/50">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground">About Zoe</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+            About Zoe
+          </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            With 3 years of experience caring for cats of many different personalities, I understand that every cat has unique needs. 
-            Whether your cat is shy and needs gentle patience, or playful and requires active engagement, I provide personalized care 
-            that keeps them comfortable.
+            With 3 years of experience caring for cats of many different
+            personalities, I understand that every cat has unique needs. Whether
+            your cat is shy and needs gentle patience, or playful and requires
+            active engagement, I provide personalized care that keeps them
+            comfortable.
           </p>
         </div>
       </section>
 
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground text-center mb-12">What's Included</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground text-center mb-12">
+            What's Included
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -82,40 +105,58 @@ const Index = () => {
                   <Coffee className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-foreground mb-2">Feeding & Fresh Water</h3>
-                  <p className="text-muted-foreground">Whatever food and treats your cat normally has</p>
+                  <h3 className="font-medium text-foreground mb-2">
+                    Feeding & Fresh Water
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Whatever food and treats your cat normally has
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <Droplets className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-foreground mb-2">Litter Cleaning</h3>
-                  <p className="text-muted-foreground">Daily maintenance to keep your cat's environment clean and comfortable</p>
+                  <h3 className="font-medium text-foreground mb-2">
+                    Litter Cleaning
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Daily maintenance to keep your cat's environment clean and
+                    comfortable
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <Heart className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-foreground mb-2">Play Time</h3>
-                  <p className="text-muted-foreground">Play time with your cat</p>
+                  <h3 className="font-medium text-foreground mb-2">
+                    Play Time
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Play time with your cat
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <Camera className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-foreground mb-2">Photo Updates for Owners</h3>
-                  <p className="text-muted-foreground">Regular photos and updates so you can see how your cat is doing, sent via WhatsApp</p>
+                  <h3 className="font-medium text-foreground mb-2">
+                    Photo Updates for Owners
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Regular photos and updates so you can see how your cat is
+                    doing, sent via WhatsApp
+                  </p>
                 </div>
               </div>
             </div>
@@ -125,10 +166,13 @@ const Index = () => {
 
       <section className="py-20 px-4 bg-card/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground text-center mb-12">Cats I've Cared For</h2>
-          <p className="font-serif text-m md:text-m text-foreground text-center mb-12">Please swipe through</p>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground text-center mb-12">
+            Cats I've Cared For
+          </h2>
+          <p className="font-serif text-m md:text-m text-foreground text-center mb-12">
+            Please swipe through
+          </p>
 
-          
           <Carousel
             setApi={setApi}
             opts={{
@@ -141,9 +185,9 @@ const Index = () => {
               <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="relative group">
                   <div className="relative rounded-xl overflow-hidden shadow-soft group-hover:shadow-elegant transition-all duration-300">
-                    <img 
-                      src="/photos/cat2.webp" 
-                      alt="Adorable tabby cat named Sweep" 
+                    <img
+                      src="/photos/cat2.webp"
+                      alt="Adorable tabby cat named Sweep"
                       className="w-full h-80 object-cover"
                     />
                   </div>
@@ -152,13 +196,13 @@ const Index = () => {
                   </div>
                 </div>
               </CarouselItem>
-              
+
               <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="relative group">
                   <div className="relative rounded-xl overflow-hidden shadow-soft group-hover:shadow-elegant transition-all duration-300">
-                    <img 
-                      src="/photos/cat3.webp" 
-                      alt="Sleepy cat named Lily" 
+                    <img
+                      src="/photos/cat3.webp"
+                      alt="Sleepy cat named Lily"
                       className="w-full h-80 object-cover"
                     />
                   </div>
@@ -167,13 +211,13 @@ const Index = () => {
                   </div>
                 </div>
               </CarouselItem>
-              
+
               <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="relative group">
                   <div className="relative rounded-xl overflow-hidden shadow-soft group-hover:shadow-elegant transition-all duration-300">
-                    <img 
-                      src="/photos/cat4.webp" 
-                      alt="Black cat named Sooty with food bowls" 
+                    <img
+                      src="/photos/cat4.webp"
+                      alt="Black cat named Sooty with food bowls"
                       className="w-full h-80 object-cover"
                     />
                   </div>
@@ -186,9 +230,9 @@ const Index = () => {
               <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="relative group">
                   <div className="relative rounded-xl overflow-hidden shadow-soft group-hover:shadow-elegant transition-all duration-300">
-                    <img 
-                      src="/photos/cat5.webp" 
-                      alt="Beautiful cat named Lily" 
+                    <img
+                      src="/photos/cat5.webp"
+                      alt="Beautiful cat named Lily"
                       className="w-full h-80 object-cover"
                     />
                   </div>
@@ -201,9 +245,9 @@ const Index = () => {
               <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="relative group">
                   <div className="relative rounded-xl overflow-hidden shadow-soft group-hover:shadow-elegant transition-all duration-300">
-                    <img 
-                      src="/photos/cat6.webp" 
-                      alt="Beautiful grey cat named Lisa" 
+                    <img
+                      src="/photos/cat6.webp"
+                      alt="Beautiful grey cat named Lisa"
                       className="w-full h-80 object-cover"
                     />
                   </div>
@@ -216,9 +260,9 @@ const Index = () => {
               <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="relative group">
                   <div className="relative rounded-xl overflow-hidden shadow-soft group-hover:shadow-elegant transition-all duration-300">
-                    <img 
-                      src="/photos/cat7.webp" 
-                      alt="Beautiful cat named Neli" 
+                    <img
+                      src="/photos/cat7.webp"
+                      alt="Beautiful cat named Neli"
                       className="w-full h-80 object-cover object-top"
                     />
                   </div>
@@ -231,9 +275,9 @@ const Index = () => {
               <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="relative group">
                   <div className="relative rounded-xl overflow-hidden shadow-soft group-hover:shadow-elegant transition-all duration-300">
-                    <img 
-                      src="/photos/cat8.webp" 
-                      alt="Beautiful cat named Boo" 
+                    <img
+                      src="/photos/cat8.webp"
+                      alt="Beautiful cat named Boo"
                       className="w-full h-80 object-cover object-top"
                     />
                   </div>
@@ -243,18 +287,20 @@ const Index = () => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            
+
             <CarouselPrevious className="hidden sm:flex -left-12 bg-primary/10 border-primary/20 hover:bg-primary/20 text-primary hover:text-primary" />
             <CarouselNext className="hidden sm:flex -right-12 bg-primary/10 border-primary/20 hover:bg-primary/20 text-primary hover:text-primary" />
           </Carousel>
-          
+
           <div className="flex justify-center mt-8">
             <div className="flex space-x-2">
               {Array.from({ length: count }, (_, index) => (
                 <button
                   key={index}
                   className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-110 ${
-                    index + 1 === current ? 'bg-primary' : 'bg-primary/30 hover:bg-primary/50'
+                    index + 1 === current
+                      ? "bg-primary"
+                      : "bg-primary/30 hover:bg-primary/50"
                   }`}
                   onClick={() => api?.scrollTo(index)}
                 />
@@ -266,12 +312,15 @@ const Index = () => {
 
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground text-center mb-12">What Cat Parents Say</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground text-center mb-12">
+            What Cat Parents Say
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-card rounded-xl p-8 shadow-soft">
               <p className="text-muted-foreground italic leading-relaxed mb-6">
-                "Our cat, Lily, had a fabulous holiday with Zoe! She is a cat who thrives on love and attention, so it was
-                very reassuring to know that she was being pampered while we were away!"
+                "Our cat, Lily, had a fabulous holiday with Zoe! She is a cat
+                who thrives on love and attention, so it was very reassuring to
+                know that she was being pampered while we were away!"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
@@ -281,19 +330,24 @@ const Index = () => {
                   <div className="flex items-center gap-2 mb-1">
                     <p className="font-medium text-foreground">Karen</p>
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span className="text-xs text-green-600 font-medium">Verified</span>
+                    <span className="text-xs text-green-600 font-medium">
+                      Verified
+                    </span>
                   </div>
-                  <p className="text-sm text-muted-foreground">🏡 Cat stayed at mine</p>
+                  <p className="text-sm text-muted-foreground">
+                    🏡 Cat stayed at mine
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-card rounded-xl p-8 shadow-soft">
               <p className="text-muted-foreground italic leading-relaxed mb-6">
-                "Zoe has cared for our cats Sooty and Sweep since they were kittens.
-                She has always made sure that they have clean water and fresh food. Zoe also
-                keeps the cats entertained by having playtime, she is kind, friendly, gentle and trustworthy
-                to keep our cats safe. She is our go to cat carer."
+                "Zoe has cared for our cats Sooty and Sweep since they were
+                kittens. She has always made sure that they have clean water and
+                fresh food. Zoe also keeps the cats entertained by having
+                playtime, she is kind, friendly, gentle and trustworthy to keep
+                our cats safe. She is our go to cat carer."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
@@ -303,7 +357,9 @@ const Index = () => {
                   <div className="flex items-center gap-2 mb-1">
                     <p className="font-medium text-foreground">Fiona Jones</p>
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span className="text-xs text-green-600 font-medium">Verified</span>
+                    <span className="text-xs text-green-600 font-medium">
+                      Verified
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">📍 Teddington</p>
                 </div>
@@ -315,7 +371,9 @@ const Index = () => {
 
       <section className="py-20 px-4 bg-card/50">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground">Simple, Honest Pricing</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+            Simple, Honest Pricing
+          </h2>
           <div className="bg-card rounded-xl p-8 shadow-soft max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Sparkles className="h-8 w-8 text-primary" />
@@ -331,18 +389,20 @@ const Index = () => {
 
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground">Check Availability</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+            Check Availability
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Want to check availability? WhatsApp Zoe directly:
           </p>
-          
+
           <div className="space-y-6">
             <div className="text-2xl font-medium text-primary">
               <WhatsAppLink phoneNumber="+44 7434 869115" />
             </div>
-            
-            <WhatsAppButton 
-              phoneNumber="+44 7434 869115" 
+
+            <WhatsAppButton
+              phoneNumber="+44 7434 869115"
               message="Hi Zoe! I'd like to check your availability for cat care services."
               className="text-lg px-8 py-4"
             />
@@ -353,22 +413,23 @@ const Index = () => {
       <footer className="bg-card border-t border-border py-12 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <img 
-              src="/favicon-96x96.png" 
-              alt="ZoeCC Logo" 
+            <img
+              src="/favicon-96x96.png"
+              alt="ZoeCC Logo"
               className="h-8 w-8"
             />
             <span className="font-serif text-2xl text-primary">ZoeCC</span>
           </div>
           <p className="text-muted-foreground">
-            Gentle, loving cat care in Teddington, £8/visit. Cat Sitter. Cat Sitter Teddington. Cat Care.
+            Gentle, loving cat care in Teddington, £8/visit. Cat Sitter. Cat
+            Sitter Teddington. Cat Care.
           </p>
           <div className="text-sm text-muted-foreground/80 pt-4 border-t border-border/50">
             <p>
-              © 2025 ZoeCC. Site created by{' '}
-              <a 
-                href="https://www.samuelforrest.me/?utm_source=zoecc.co.uk&utm_medium=redirect&utm_campaign=internal-crosslink" 
-                target="_blank" 
+              © 2025 ZoeCC. Site created by{" "}
+              <a
+                href="https://www.samuelforrest.me/?utm_source=zoecc.co.uk&utm_medium=redirect&utm_campaign=internal-crosslink"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary/80 transition-colors underline"
               >
@@ -376,8 +437,8 @@ const Index = () => {
               </a>
             </p>
             <p className="mt-2">
-              Spotted an error?{' '}
-              <a 
+              Spotted an error?{" "}
+              <a
                 href="mailto:sam@samuelforrest.me"
                 className="text-primary hover:text-primary/80 transition-colors underline"
               >
@@ -387,7 +448,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
-      <Analytics/>
+      <Analytics />
     </div>
   );
 };
