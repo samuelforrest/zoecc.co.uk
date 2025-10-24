@@ -444,6 +444,11 @@ const Index = () => {
                 Contact sam@samuelforrest.me
               </a>
             </p>
+            <p className="mt-2">
+              This website uses analytics provided by Google Analytics and
+              Vercel Analytics. Please visit their respective privacy policies
+              for more information on how your data & cookies is handled.
+            </p>
           </div>
         </div>
       </footer>
