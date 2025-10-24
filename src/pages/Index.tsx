@@ -16,7 +16,7 @@ import {
   CarouselApi,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const Index = () => {
   const [api, setApi] = useState<CarouselApi>();
