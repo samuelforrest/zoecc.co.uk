@@ -22,5 +22,5 @@ A modern, yet simple and fast landing page built with React + vite.
 
 **Styling & UI**
 
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind CSS (latest v3)](https://tailwindcss.com/)
 - [Shadcn UI](https://ui.shadcn.com/)
